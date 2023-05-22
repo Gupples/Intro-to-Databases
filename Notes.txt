@@ -1,1 +1,84 @@
+19 April 2023
+    Team activity; baggies with parts of traffic signs among all the different teams.
+    Data out of context makes no sense. 
+    Data is the new oil; it's where the money is.
 
+21 April 2023
+    Data-based decision-making. Some tools;
+        Geospatial;
+            www.arcgis.com and Living Atlas are good examples of Data
+        Economics
+            .csv files, tableau, Power BI
+    Activity using Living Atlas; General questions to consider when looking at a 
+    database;
+        -How is this data useful?
+        -How can it help us make data-driven decisions?
+        -Can it make money?
+        -Is it Ethical?
+    An effective method of being productive is time-boxing*.
+    
+    *Box out some time to dedicate to a single task and stick to it, eg; homework,
+        classes, food, etc.
+
+24 April 2023
+    Power consistency and Data Consistency. 
+        -You can keep data consitent by forcing a type of data to be a string instead
+            of a number or requiring a cell to be a number. Databases are great because
+            you can force rows and columns to require certain data types to keep
+            consistency.
+        -SQL & MYSQL; SQL = Sequence Query Language. MySQL = ...
+        -SOW = Statement of Work.
+        -Entity is a thing you can keep a record on/of. If you're talking about a single
+            one fo those, that is an "instance" of an entity.
+        -IN SQL; "SELECT * FROM person
+                     WHERE last_name = "Peterson";" is how you can get all the people in a
+                database with the last name of Peterson. We're gonna learn more about that
+                later in the semester. Subject to change slightly between databases.
+    -Data Redundancy
+        -Redundancy in data is bad. We want to get rid of it all. Eg; if a store's database
+            says a single person buys milk on a regular basis, that would FILL the database,
+            so we most likely will move that to be its own database. 
+        -When writing relationships between databases, use the following to indicate them
+            (in this example, read it only going to the right);
+            Many; [Person]--<[Order]
+            One; [Order]----[Person]
+
+28 April 2023
+    When using datatypes for your database, CHAR(2) uses less memory than VARCHAR(2), so use
+    CHAR for smaller variables. CHAR will keep all the values that you enter in, even if you
+    don't use the rest. "cherry" takes as much memory as "_ _ _ R _". VARCHAR cuts off after 
+    you're done, but it takes a little memory to keep track of where it cut off.
+    If you wanted to do a more strict data type, use ENUM(). For
+    that, specify the only values in declaration.
+    (eg. strictname; ENUM('ID', 'UT', 'AZ', 'WA',...)). NOTE; IT DOES NOT automatically
+    make it available in the overall program you might be writing in. You still would
+    need to program it into your website's dropdown selector, for example.
+    For more data types, visit https://www.w3schools.com/mysql/mysql_datatypes.asp
+    In class, we will use;
+        -INT        -BOOLEAN        -TINYINT
+        -CHAR       -VARCHAR        -DATE
+        -DATETIME   -YEAR           -DECIMAL
+        -ENUM
+    DECIMAL requires 2 inputs; a size and a display number. Eg. DECIMAL(6,2) would mean
+        "show '_ _ _ _ . _ _'". DECIMAL(8,3) would be "show '_ _ _ _ _ . _ _ _'".
+
+5 May 2023
+    BOOLEAN (16-bits) takes more space than TINYINT (8-bits)
+
+15 May 2023
+    NORMALIZATION - Used to make sure each column in the database is relevant/used correctly.
+    1st- The Key
+        Does it have a primary key?
+    2nd- The whole key
+        Does the entire record depend on the primary key?
+    3rd- Nothing but the key
+        Does it have columns that doesn't depend on the primary key?
+
+17 May 2023
+    INT(4) DOES NOT LIMIT IT TO 4 CHARACTERS!!! It only limits the DISPLAY to the 4th place, eg. 
+    345678 would round to 3457.
+
+19 May 2023
+    SINGLE QUOTES ARE BETTER IN DATABASES because single quotes are universal across databases; double quotes are NOT.
+    If you use double quotes in your database, you're putting your database in danger because of incompatability between
+    servers.        
